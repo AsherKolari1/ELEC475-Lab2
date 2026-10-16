@@ -1,0 +1,37 @@
+ELEC 475 Lab 2 — Tiny ImageNet Table 6 Run
+
+Dataset:
+Tiny ImageNet-200
+
+Environment:
+Google Colab
+NVIDIA A100-SXM4-40GB
+
+Experimental seed:
+42
+
+Batch size:
+128
+
+Learning rate:
+0.001
+
+Colab-only DataLoader optimization:
+- num_workers = 8
+- pin_memory = True
+- persistent_workers = True
+
+This optimization changes data-loading throughput only.
+Model definitions, optimizer settings, seed, batch size, learning rate,
+epoch counts, dataset, normalization configurations, and augmentation
+configurations were otherwise retained.
+
+Tiny ImageNet Row 6 (AlexNet + BN + Aug) was NOT rerun here.
+The existing local RTX 3050 result is retained:
+Val Accuracy = 33.12%
+Macro F1 = 31.18%
+Epochs = 10
+Seed = 42
+Augmentation = ON
+
+Rows 1-5 and 7 below use augmentation OFF.
