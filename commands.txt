@@ -1,0 +1,108 @@
+# ============================================================
+# ELEC 475 - LAB 2
+# REPRODUCIBLE COMMANDS
+#
+# Run the commands below individually from the Lab 2 project
+# root directory. This file is provided as a reproducibility
+# reference and is not intended to be executed as one script.
+# ============================================================
+
+
+# ============================================================
+# 1. CIFAR-10 MASTER MODEL RUNS
+# ============================================================
+
+# Base LeNet-5
+python train.py --model lenet --dataset cifar10 --epochs 5 --batch-size 128 --lr 0.001 --seed 42 --no-augment --save-model checkpoints/lenet_baseline.pth --plot-file plots/loss_lenet.png
+
+# Modernized LeNet
+python train.py --model lenet_modern --dataset cifar10 --epochs 5 --batch-size 128 --lr 0.001 --seed 42 --no-augment --save-model checkpoints/lenet_modern.pth --plot-file plots/loss_lenet_modern.png
+
+# AlexNet - No Normalization
+python train.py --model alexnet --norm none --dataset cifar10 --epochs 10 --batch-size 128 --lr 0.001 --seed 42 --no-augment --save-model checkpoints/alexnet_none.pth --plot-file plots/loss_alexnet_none.png
+
+# AlexNet + LRN
+python train.py --model alexnet --norm lrn --dataset cifar10 --epochs 10 --batch-size 128 --lr 0.001 --seed 42 --no-augment --save-model checkpoints/alexnet_lrn.pth --plot-file plots/loss_alexnet_lrn.png
+
+# AlexNet + BatchNorm
+python train.py --model alexnet --norm bn --dataset cifar10 --epochs 10 --batch-size 128 --lr 0.001 --seed 42 --no-augment --save-model checkpoints/alexnet_bn.pth --plot-file plots/loss_alexnet_bn.png
+
+# AlexNet + BatchNorm + Data Augmentation
+python train.py --model alexnet --norm bn --dataset cifar10 --epochs 15 --batch-size 128 --lr 0.001 --seed 42 --save-model checkpoints/alexnet_with_aug.pth --plot-file plots/loss_with_aug.png
+
+# PyTorch Zoo AlexNet
+python train.py --model zoo_alexnet --dataset cifar10 --epochs 15 --batch-size 128 --lr 0.001 --seed 42 --early-stopping --no-augment --save-model checkpoints/zoo_alexnet_cifar10.pth --plot-file plots/loss_zoo_alexnet_cifar10.png
+
+
+# ============================================================
+# 2. DATA AUGMENTATION COMPARISON
+# ============================================================
+
+# AlexNet + BatchNorm - No Augmentation
+python train.py --model alexnet --norm bn --dataset cifar10 --epochs 15 --batch-size 128 --lr 0.001 --seed 42 --no-augment --save-model checkpoints/alexnet_no_aug.pth --plot-file plots/loss_no_aug.png
+
+# AlexNet + BatchNorm - With Augmentation
+python train.py --model alexnet --norm bn --dataset cifar10 --epochs 15 --batch-size 128 --lr 0.001 --seed 42 --save-model checkpoints/alexnet_with_aug.pth --plot-file plots/loss_with_aug.png
+
+
+# ============================================================
+# 3. TINY IMAGENET MASTER MODEL RUNS
+# ============================================================
+
+# Base LeNet-5
+python train.py --model lenet --dataset tiny_imagenet --epochs 5 --batch-size 128 --lr 0.001 --seed 42 --no-augment --save-model checkpoints/lenet_tiny.pth --plot-file plots/loss_lenet_tiny.png
+
+# Modernized LeNet
+python train.py --model lenet_modern --dataset tiny_imagenet --epochs 5 --batch-size 128 --lr 0.001 --seed 42 --no-augment --save-model checkpoints/lenet_modern_tiny.pth --plot-file plots/loss_lenet_modern_tiny.png
+
+# AlexNet - No Normalization
+python train.py --model alexnet --norm none --dataset tiny_imagenet --epochs 10 --batch-size 128 --lr 0.001 --seed 42 --no-augment --save-model checkpoints/alexnet_none_tiny.pth --plot-file plots/loss_alexnet_none_tiny.png
+
+# AlexNet + LRN
+python train.py --model alexnet --norm lrn --dataset tiny_imagenet --epochs 10 --batch-size 128 --lr 0.001 --seed 42 --no-augment --save-model checkpoints/alexnet_lrn_tiny.pth --plot-file plots/loss_alexnet_lrn_tiny.png
+
+# AlexNet + BatchNorm
+python train.py --model alexnet --norm bn --dataset tiny_imagenet --epochs 10 --batch-size 128 --lr 0.001 --seed 42 --no-augment --save-model checkpoints/alexnet_bn_tiny.pth --plot-file plots/loss_alexnet_bn_tiny.png
+
+# AlexNet + BatchNorm + Data Augmentation
+python train.py --model alexnet --norm bn --dataset tiny_imagenet --epochs 10 --batch-size 128 --lr 0.001 --seed 42 --save-model checkpoints/alexnet_tiny_imagenet.pth --plot-file plots/loss_tiny_imagenet.png
+
+# PyTorch Zoo AlexNet
+python train.py --model zoo_alexnet --dataset tiny_imagenet --epochs 15 --batch-size 128 --lr 0.001 --seed 42 --early-stopping --no-augment --save-model checkpoints/zoo_alexnet_tiny.pth --plot-file plots/loss_zoo_alexnet_tiny.png
+
+
+# ============================================================
+# 4. EXTENDED BATCH-SIZE ABLATION
+# ============================================================
+
+# Batch Size = 64
+python train.py --model alexnet --norm bn --dataset cifar10 --epochs 15 --batch-size 64 --lr 0.001 --seed 17 --no-augment
+python train.py --model alexnet --norm bn --dataset cifar10 --epochs 15 --batch-size 64 --lr 0.001 --seed 73 --no-augment
+python train.py --model alexnet --norm bn --dataset cifar10 --epochs 15 --batch-size 64 --lr 0.001 --seed 149 --no-augment
+
+# Batch Size = 128
+python train.py --model alexnet --norm bn --dataset cifar10 --epochs 15 --batch-size 128 --lr 0.001 --seed 17 --no-augment
+python train.py --model alexnet --norm bn --dataset cifar10 --epochs 15 --batch-size 128 --lr 0.001 --seed 73 --no-augment
+python train.py --model alexnet --norm bn --dataset cifar10 --epochs 15 --batch-size 128 --lr 0.001 --seed 149 --no-augment
+
+# Batch Size = 256
+python train.py --model alexnet --norm bn --dataset cifar10 --epochs 15 --batch-size 256 --lr 0.001 --seed 17 --no-augment
+python train.py --model alexnet --norm bn --dataset cifar10 --epochs 15 --batch-size 256 --lr 0.001 --seed 73 --no-augment
+python train.py --model alexnet --norm bn --dataset cifar10 --epochs 15 --batch-size 256 --lr 0.001 --seed 149 --no-augment
+
+
+# ============================================================
+# 5. REQUIRED UTILITIES
+# ============================================================
+
+# Exploratory Data Analysis
+python utils/eda.py --dataset both
+
+# Transform Representation Diagnostic
+python demo_transforms.py
+
+# Model Complexity / Latency Comparison
+python compare_models.py --dataset cifar10 --device cuda
+
+# Master Ablation Summary Plot
+python -m utils.visualization --plot-ablation
