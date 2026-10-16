@@ -1,0 +1,36 @@
+
+================================================================================
+EXPERIMENT 01: lenet_tiny_imagenet_seed42
+================================================================================
+python train.py --model lenet --dataset tiny_imagenet --epochs 5 --batch-size 128 --lr 0.001 --seed 42 --no-augment --data-dir ./data --save-model '/content/Lab2/colab_runs/tiny_imagenet_table6_A100_seed42_20261011_172328/checkpoints/01_lenet_tiny_imagenet_seed42.pth' --plot-file '/content/Lab2/colab_runs/tiny_imagenet_table6_A100_seed42_20261011_172328/plots/01_lenet_tiny_imagenet_seed42.png'
+
+
+================================================================================
+EXPERIMENT 02: lenet_modern_tiny_imagenet_seed42
+================================================================================
+python train.py --model lenet_modern --dataset tiny_imagenet --epochs 5 --batch-size 128 --lr 0.001 --seed 42 --no-augment --data-dir ./data --save-model '/content/Lab2/colab_runs/tiny_imagenet_table6_A100_seed42_20261011_172328/checkpoints/02_lenet_modern_tiny_imagenet_seed42.pth' --plot-file '/content/Lab2/colab_runs/tiny_imagenet_table6_A100_seed42_20261011_172328/plots/02_lenet_modern_tiny_imagenet_seed42.png'
+
+
+================================================================================
+EXPERIMENT 03: alexnet_none_tiny_imagenet_seed42
+================================================================================
+python train.py --model alexnet --norm none --dataset tiny_imagenet --epochs 10 --batch-size 128 --lr 0.001 --seed 42 --no-augment --data-dir ./data --save-model '/content/Lab2/colab_runs/tiny_imagenet_table6_A100_seed42_20261011_172328/checkpoints/03_alexnet_none_tiny_imagenet_seed42.pth' --plot-file '/content/Lab2/colab_runs/tiny_imagenet_table6_A100_seed42_20261011_172328/plots/03_alexnet_none_tiny_imagenet_seed42.png'
+
+
+================================================================================
+EXPERIMENT 04: alexnet_lrn_tiny_imagenet_seed42
+================================================================================
+python train.py --model alexnet --norm lrn --dataset tiny_imagenet --epochs 10 --batch-size 128 --lr 0.001 --seed 42 --no-augment --data-dir ./data --save-model '/content/Lab2/colab_runs/tiny_imagenet_table6_A100_seed42_20261011_172328/checkpoints/04_alexnet_lrn_tiny_imagenet_seed42.pth' --plot-file '/content/Lab2/colab_runs/tiny_imagenet_table6_A100_seed42_20261011_172328/plots/04_alexnet_lrn_tiny_imagenet_seed42.png'
+
+
+================================================================================
+EXPERIMENT 05: alexnet_bn_noaug_tiny_imagenet_seed42
+================================================================================
+python train.py --model alexnet --norm bn --dataset tiny_imagenet --epochs 10 --batch-size 128 --lr 0.001 --seed 42 --no-augment --data-dir ./data --save-model '/content/Lab2/colab_runs/tiny_imagenet_table6_A100_seed42_20261011_172328/checkpoints/05_alexnet_bn_noaug_tiny_imagenet_seed42.pth' --plot-file '/content/Lab2/colab_runs/tiny_imagenet_table6_A100_seed42_20261011_172328/plots/05_alexnet_bn_noaug_tiny_imagenet_seed42.png'
+
+
+================================================================================
+EXPERIMENT 07: zoo_alexnet_tiny_imagenet_seed42
+================================================================================
+python train.py --model zoo_alexnet --dataset tiny_imagenet --epochs 10 --batch-size 128 --lr 0.001 --seed 42 --no-augment --data-dir ./data --save-model '/content/Lab2/colab_runs/tiny_imagenet_table6_A100_seed42_20261011_172328/checkpoints/07_zoo_alexnet_tiny_imagenet_seed42.pth' --plot-file '/content/Lab2/colab_runs/tiny_imagenet_table6_A100_seed42_20261011_172328/plots/07_zoo_alexnet_tiny_imagenet_seed42.png'
+

@@ -2,5 +2,7 @@
 data/
 __pycache__/
 *.pyc
-results/
-extended_ablation/
+*.pyo
+results/**/checkpoints/
+results/**/logs/07_zoo_alexnet_tiny_imagenet_seed42.log
+results/**/plots/07_zoo_alexnet_tiny_imagenet_seed42.png

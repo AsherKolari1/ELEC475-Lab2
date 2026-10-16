@@ -1,0 +1,17 @@
+================================================================================
+EXPERIMENT 06: AlexNet + BatchNorm + Data Augmentation
+================================================================================
+
+This experiment was already executed locally on the NVIDIA RTX 3050 Laptop GPU
+and is intentionally NOT rerun in Google Colab.
+
+Dataset       : Tiny ImageNet-200
+Epochs        : 10
+Seed          : 42
+Augmentation  : ON
+
+Recorded Val Accuracy : 33.12%
+Recorded Macro F1     : 31.18%
+
+This local RTX result is retained for the prescribed cross-dataset
+CIFAR-10 vs Tiny ImageNet comparison and its existing loss curves.
